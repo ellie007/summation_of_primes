@@ -1,6 +1,9 @@
+require 'prime'
+require 'pp'
+
 class SumOfPrimes
 
-  def filter_primes_from_sequence(upper_bound)
+  def sum_primes(upper_bound)
 
     natural_numbers = Array.new(upper_bound, true)
 
@@ -19,8 +22,12 @@ class SumOfPrimes
     summation = 0
     natural_numbers.each_with_index { |value, index| summation += index if value == true }
     summation - 1
-
   end
+
+  #   sum = 0
+  #    (2..upper_bound).each { |num| sum += num; pp num if Prime.prime?(num) }
+  #   sum
+  # end
 
 
   # def is_prime?(number)
@@ -36,11 +43,13 @@ class SumOfPrimes
   #   return true
   # end
 
-  # def sum_of_primes_from_2_to(upto)
-  #   sum_adder = []
-  #   (2..upto-1).each do |num|
+
+  # def sum_primes(upper_bound)
+  #   sum = []
+  #   (2..upper_bound-1).each do |num|
   #     if is_prime?(num)
-  #       sum_adder << num
+  #       sum << num
+  #       pp num
   #     end
   #   end
   #   sum_adder.inject(:+)
